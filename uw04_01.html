@@ -6,25 +6,340 @@
 	<link rel="stylesheet" type="text/css" href="./css/default.css">
 </head>
 <body>
-	<header>
-		<h1>ガセール ～ガセ商店　法人通販サイト～</h1>
+	<header class="common-header">
+		<p class="main-title">ガセール ～ガセ商店　法人通販サイト～</p>
+		<div class="sub-wrapper">
+			<div>(株)XXXX ○○部　日本　太郎　様、こんにちは！&nbsp;&nbsp;&nbsp;
+				<a href="#" class="log-off">ログオフ</a>
+			</div>
+			<div class="opt-wrapper">
+				<a href="#"><img class="cart-icon" src="./img/writecart_icon.png" />カート</a>&nbsp;&nbsp;&nbsp;
+				<a href="#">注文履歴</a>
+			</div>
+		</div>
 	</header>
-	<main>
-		<table class="mlt">
-			<tr>
-				<td>(株)XXXX ○○部　日本　太郎　様　</td><td></td>
-			</tr>
-			<tr>
-				<td class="rt"><button type="button"onclick="location.href='uw08_01.html'">注文履歴</button><td>
-				<td class="rt"><button type="button"onclick="location.href='index.html'">ログオフ</button><td>
-				
-			</tr>
-		</table>
-	<h2>商品検索</h2>
+	<main class="shop-main-container">
+		<section class="search-section">
+			<input type="text" placeholder="商品の名前を入力してください">
+			<img class="search-icon" src="./img/search1_icon.png" alt="">
+			<button class="search-button">検索</button>
+		</section>
+		<section class="category-search-section">
+			<div class="category-search-section-inner">
+				<div class="title">カテゴリーから検索</div>
+				<div class="categorys">
+					<a href="#">ノート</a>
+					<a href="#">ペン</a>
+					<a href="#">パソコンパーツ</a>
+					<a href="#">フォルダー</a>
+					<a href="#">ペンケース</a>
+					<a href="#">消しゴム</a>
+					<a href="#">ホチキス</a>
+					<a href="#">シャープペン</a>
+					<a href="#">手帳</a>
+					<a href="#">シャープペン芯</a>
+					<a href="#">蛍光ペン</a>
+					<a href="#">封筒</a>
+					<a href="#">付箋</a>
+					<a href="#">セロテープ</a>
+					<a href="#">シール</a>
+				</div>
+			</div>
+		</section>
+		<section class="goods-section">
+			<div class="title">
+				<img src="./img/top_icon.png" />
+				おすすめの商品
+			</div>
+			<div class="goods-inner-container">
+				<div class="goods-item-container">
+					<div class="img-wrapper">
+						<img src="./img/インクシアン.jpg" />
+					</div>
+					<div class="goods-item-infos">
+						<div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
+						<div class="price-cart">
+							<div class="cart" title="カートに入れましょう"></div>
+							<div class="price">
+								<div>
+									<div>
+										<div class="p">
+											<span class="enn-mark">￥</span>
+											<span class="p">2,300</span>
+											<span class="enn-mark">税抜</span>
+										</div>
+										<div class="sub-p">
+											<small class="mark">税込価格：2500円</small>
+										</div>
+									</div>
+								</div>
+								<div class="detail-wrpper">
+									<a href="#" class="detail">詳細</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="goods-item-container">
+					<div class="img-wrapper">
+						<img src="./img/インクマゼンダ.jpg" />
+					</div>
+					<div class="goods-item-infos">
+						<div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
+						<div class="price-cart">
+							<div class="cart" title="カートに入れましょう"></div>
+							<div class="price">
+								<div>
+									<div>
+										<div class="p">
+											<span class="enn-mark">￥</span>
+											<span class="p">3,300</span>
+											<span class="enn-mark">税抜</span>
+										</div>
+										<div class="sub-p">
+											<small class="mark">税込価格：3600円</small>
+										</div>
+									</div>
+								</div>
+								<div class="detail-wrpper">
+									<a href="#" class="detail">詳細</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="goods-item-container">
+					<div class="img-wrapper">
+						<img src="./img/コピー用紙白.jpg" />
+					</div>
+					<div class="goods-item-infos">
+						<div class="goodsname">コピー用紙白商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
+						<div class="price-cart">
+							<div class="cart" title="カートに入れましょう"></div>
+							<div class="price">
+								<div>
+									<div>
+										<div class="p">
+											<span class="enn-mark">￥</span>
+											<span class="p">500</span>
+											<span class="enn-mark">税抜</span>
+										</div>
+										<div class="sub-p">
+											<small class="mark">税込価格：550円</small>
+										</div>
+									</div>
+								</div>
+								<div class="detail-wrpper">
+									<a href="#" class="detail">詳細</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="goods-item-container">
+					<div class="img-wrapper">
+						<img src="./img/コンパス.jpg" />
+					</div>
+					<div class="goods-item-infos">
+						<div class="goodsname">コンパス商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
+						<div class="price-cart">
+							<div class="cart" title="カートに入れましょう"></div>
+							<div class="price">
+								<div>
+									<div>
+										<div class="p">
+											<span class="enn-mark">￥</span>
+											<span class="p">300</span>
+											<span class="enn-mark">税抜</span>
+										</div>
+										<div class="sub-p">
+											<small class="mark">税込価格：330円</small>
+										</div>
+									</div>
+								</div>
+								<div class="detail-wrpper">
+									<a href="#" class="detail">詳細</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="goods-item-container">
+					<div class="img-wrapper">
+						<img src="./img/ノートPC.jpg" />
+					</div>
+					<div class="goods-item-infos">
+						<div class="goodsname">ノートPC商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
+						<div class="price-cart">
+							<div class="cart" title="カートに入れましょう"></div>
+							<div class="price">
+								<div>
+									<div>
+										<div class="p">
+											<span class="enn-mark">￥</span>
+											<span class="p">230,9300</span>
+											<span class="enn-mark">税抜</span>
+										</div>
+										<div class="sub-p">
+											<small class="mark">税込価格：580円</small>
+										</div>
+									</div>
+								</div>
+								<div class="detail-wrpper">
+									<a href="#" class="detail">詳細</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="goods-item-container">
+					<div class="img-wrapper">
+						<img src="./img/はさみ.jpg" />
+					</div>
+					<div class="goods-item-infos">
+						<div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
+						<div class="price-cart">
+							<div class="cart" title="カートに入れましょう"></div>
+							<div class="price">
+								<div>
+									<div>
+										<div class="p">
+											<span class="enn-mark">￥</span>
+											<span class="p">2,309,300</span>
+											<span class="enn-mark">税抜</span>
+										</div>
+										<div class="sub-p">
+											<small class="mark">税込価格：2,319,300円</small>
+										</div>
+									</div>
+								</div>
+								<div class="detail-wrpper">
+									<a href="#" class="detail">詳細</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="goods-item-container">
+					<div class="img-wrapper">
+						<img src="./img/キーボード.jpg" />
+					</div>
+					<div class="goods-item-infos">
+						<div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
+						<div class="price-cart">
+							<div class="cart" title="カートに入れましょう"></div>
+							<div class="price">
+								<div>
+									<div>
+										<div class="p">
+											<span class="enn-mark">￥</span>
+											<span class="p">11,300</span>
+											<span class="enn-mark">税抜</span>
+										</div>
+										<div class="sub-p">
+											<small class="mark">税込価格：12,300円</small>
+										</div>
+									</div>
+								</div>
+								<div class="detail-wrpper">
+									<a href="#" class="detail">詳細</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="goods-item-container">
+					<div class="img-wrapper">
+						<img src="./img/ホチキス.jpg" />
+					</div>
+					<div class="goods-item-infos">
+						<div class="goodsname">ホチキス商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
+						<div class="price-cart">
+							<div class="cart" title="カートに入れましょう"></div>
+							<div class="price">
+								<div>
+									<div>
+										<div class="p">
+											<span class="enn-mark">￥</span>
+											<span class="p">600</span>
+											<span class="enn-mark">税抜</span>
+										</div>
+										<div class="sub-p">
+											<small class="mark">税込価格：660円</small>
+										</div>
+									</div>
+								</div>
+								<div class="detail-wrpper">
+									<a href="#" class="detail">詳細</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="goods-item-container">
+					<div class="img-wrapper">
+						<img src="./img/マウス白.jpg" />
+					</div>
+					<div class="goods-item-infos">
+						<div class="goodsname">マウス白商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
+						<div class="price-cart">
+							<div class="cart" title="カートに入れましょう"></div>
+							<div class="price">
+								<div>
+									<div>
+										<div class="p">
+											<span class="enn-mark">￥</span>
+											<span class="p">2,300</span>
+											<span class="enn-mark">税抜</span>
+										</div>
+										<div class="sub-p">
+											<small class="mark">税込価格：2,500円</small>
+										</div>
+									</div>
+								</div>
+								<div class="detail-wrpper">
+									<a href="#" class="detail">詳細</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="goods-item-container">
+					<div class="img-wrapper">
+						<img src="./img/リングファイル.jpg" />
+					</div>
+					<div class="goods-item-infos">
+						<div class="goodsname">リングファイル商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
+						<div class="price-cart">
+							<div class="cart" title="カートに入れましょう"></div>
+							<div class="price">
+								<div>
+									<div>
+										<div class="p">
+											<span class="enn-mark">￥</span>
+											<span class="p">300</span>
+											<span class="enn-mark">税抜</span>
+										</div>
+										<div class="sub-p">
+											<small class="mark">税込価格：330円</small>
+										</div>
+									</div>
+								</div>
+								<div class="detail-wrpper">
+									<a href="#" class="detail">詳細</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</section>
 	</main>
-
+	<footer class="common-footer">
+		<small>
+			&copy; 2023 ガセール ～ガセ商店　法人通販サイト
+		</small>
+	</footer>
 </body>
-<footer>
-	<hr>
-</footer>
 </html>
