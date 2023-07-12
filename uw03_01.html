@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>ユーザ確認（パスワードをお忘れの方）</title>
+	<link rel="stylesheet" type="text/css" href="./css/default.css">
+</head>
+
+<body>
+	<header>
+		<h1>ガセール ～ガセ商店　法人通販サイト～</h1>
+	</header>
+	<main>
+		<h2>ご本人様の確認</h2>
+		<p>
+			パスワードを忘れた方は、こちらのページでご本人様であることの確認をさせていただきます。<br>
+			下記の入力欄へ、お客様の情報をご入力ください。
+		</p>
+		<p>
+			現在ご登録いただいているメールアドレスに仮ログインメールを送信いたします。<br>
+			メールアドレスのご登録に誤りがある場合や、メールアドレスをお忘れの方は担当営業までご連絡ください。
+		</p>
+		<h3>ご本人様であることの確認</h3>
+		<form method="post" action="uw03_02.html">
+			<table>
+				<tr>
+					<th style="width: 208px" class="rt">メールアドレス：</th>
+					<td>
+					<input type="text"  name="mail"  value="" style="width: 431px"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<th style="width: 208px" class="rt">ご登録済みのお電話番号：</th>
+					<td><input type="password"  name="pw" style="width: 423px"></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td style="width: 208px"></td>
+					<td>*ハイフン(-)なしの数字のみご入力ください。</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td style="width: 208px" class="rt">
+						<button type="button"onclick="location.href='index.html'">ログオン画面に戻る</button>
+					</td>
+					<td><input type="submit" value="本人確認用メールを送信する"></td>
+					<td><td>
+				</tr>
+			</table>
+		</form>
+	</main>
+	<footer>
+		<hr>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<title>注文履歴</title>
+</head>
+<body>
+<h1>ガセール ～ガセ商店　法人通販サイト～</h1>
+		<table class="mlt">
+			<tr>
+				<td>(株)XXXX ○○部　日本　太郎　様　</td>
+			</tr>
+			<tr>
+				<td class="rt"><button type="button"onclick="location.href='index.html'">ログオフ</button><td>
+				
+			</tr>
+		</table>
+
+<h2>注文状況一覧</h2>
+<h3>検索する</h3>
+<form method="post" action="uw08_S1.html">
+	<table>
+		<tr>
+			<th>期間：</th>
+			<td><label>期間を選択してください</label></td>
+			<td>
+				<select name="period">
+					<option value="three">過去3か月</option>
+					<option value="six">過去6か月</option>
+					<option value="twelve" selected="selected">過去1年</option>
+					<option value="more"  >1年以上</option>
+				</select>
+			</td>
+			</tr>
+	</table>
+	<table>
+		<tr>
+			<th>配送状況：</th>
+			<td><input type="checkbox" name="delivery" value="shipped" checked="checked">配送済</td>
+			<td><input type="checkbox" name="delivery" value="unshipped" >未配送</td>
+			<td></td>
+		</tr>
+		<tr>	
+			<th>入金状況:</th>
+			<td><input type="checkbox" name="pay" value="paid" checked="checked" >入金済</td>
+			<td><input type="checkbox" name="pay" value="unpaid" >未入金</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td><input type="submit" value="検索"></td>
+		</tr>
+	</table>
+		</form>
+
+<p>過去1年の注文</p>
+<hr>
+<table>
+	<tr><th>注文番号</th><th>注文日</th><th>ご請求金額</th><th>入金状況</th><th>配送状況</th><th>詳細</th></tr>
+	<tr><td>20230710001</td><td>2023年07月10日</td><td class="rt">10,624円</td><td>未入金</td><td>配送準備中</td><td>
+	<button type="button"onclick="location.href='uw08_02.html'">詳細を見る</button>
+	</td></tr>
+	<tr><td>20230705010</td><td>2023年07月05日</td><td class="rt">5,240円</td><td>未入金</td><td>配送中</td><td>
+	<button type="button"onclick="location.href=''">詳細を見る</button>
+	</td></tr>
+	<tr><td>20230610001</td><td>2023年06月10日</td><td class="rt">9,200円</td><td>入金済み</td><td>配送済み</td><td>
+	<button type="button"onclick="location.href=''">詳細を見る</button>
+	</td></tr>
+	<tr><td>20230601888</td><td>2023年06月01日</td><td class="rt">25,598円</td><td>入金済み</td><td>配送済み</td><td>
+	<button type="button"onclick="location.href=''">詳細を見る</button>
+	</td></tr>
+	<tr><td>20221225035</td><td>2022年12月25日</td><td class="rt">100,389円</td><td>入金済み</td><td>配送済み</td><td>
+	<button type="button"onclick="location.href=''">詳細を見る</button>
+	</td>
+	</tr>
+</table>
+
+
+
+
+
+<hr>
+<button type="button"onclick="location.href='uw04_01.html'">商品検索に戻る</button>
+
+</body>
+
+</html>

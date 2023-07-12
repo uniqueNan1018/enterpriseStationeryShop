@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/default.css">
+	<title>注文履歴</title>
+</head>
+<body>
+	<header>
+		<h1>ガセール ～ガセ商店　法人通販サイト～</h1>
+		<table class="mlt">
+			<tr>
+				<td>(株)XXXX ○○部　日本　太郎　様　</td>
+			</tr>
+			<tr>
+				<td class="rt"><button type="button"onclick="location.href='index.html'">ログオフ</button><td>
+				
+			</tr>
+		</table>
+	</header>
+
+	<main>
+		<h2>注文状況一覧</h2>
+		<h3>検索する</h3>
+		<form method="post" action="../uw08_021.html">
+			<table>
+				<tr>
+					<th>期間：</th>
+					<td><label>期間を選択してください</label></td>
+					<td>
+						<select name="period">
+							<option value="three" selected>過去3か月</option>
+							<option value="six">過去6か月</option>
+							<option value="twelve">過去1年</option>
+							<option value="more">1年以上</option>
+						</select>
+					</td>
+					</tr>
+			</table>
+			<table>
+				<tr>
+					<th>配送状況：</th>
+					<td><input type="checkbox" name="delivery" value="shipped" checked="checked">配送済</td>
+					<td><input type="checkbox" name="delivery" value="unshipped" checked="checked">未配送</td>
+					<td></td>
+				</tr>
+				<tr>	
+					<th>入金状況:</th>
+					<td><input type="checkbox" name="pay" value="paid" checked="checked" >入金済</td>
+					<td><input type="checkbox" name="pay" value="unpaid" checked="checked" >未入金</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><input type="submit" value="検索"></td>
+				</tr>
+			</table>
+				</form>
+
+		<p>過去3か月の注文</p>
+		<hr>
+		<p class="auto-style1"><strong>該当する注文はございません</strong></p>
+
+
+
+
+		<hr>
+		<button type="button"onclick="location.href='uw04_01.html'">商品検索に戻る</button>
+	</main>
+	
+	<footer>
+		<hr>
+	</footer>
+</body>
+
+</html>

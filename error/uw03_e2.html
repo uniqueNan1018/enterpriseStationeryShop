@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>パスワード再設定</title>
+	<link rel="stylesheet" type="text/css" href="../css/default.css">
+</head>
+
+<body>
+<header>
+	<h1>ガセール ～ガセ商店　法人通販サイト～</h1>
+</header>
+<main>
+	<h2>パスワードの再設定</h2>
+	<p>新しいパスワードを設定してください。</p>
+	<p>パスワードは名前・生年月日等は避け、英字(大文字・小文字）、数字、記号の組み合わせで8文字～12文字で設定ください。</p>
+	<p class="error"><strong>新しいパスワードと新しいパスワード（再確認）が一致していません。</strong></p> 
+	<form method="post" action="uw03_05.html">
+		<table>
+			<tr>
+				<th style="width: 208px">新しいパスワード：</th>
+				<td class="auto-style2" >必須</td>
+				<td>
+					<input type="password"  name="pw1"  value="" style="width: 431px"></td>
+
+			</tr>
+			<tr>
+				<th style="width: 208px">確認用パスワード：</th>
+					<td class="auto-style2">必須</td>
+				<td><input type="password"  name="pw2" style="width: 431px"></td>
+			
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td>*確認のため再度パスワードを入力してください</td>
+				</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><input type="submit" value="パスワードを再設定する"></td>
+				</tr>
+		</table>
+	</form>
+</main>
+<footer>
+	<hr>
+</footer>
+</body>
+
+</html>
