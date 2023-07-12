@@ -31,7 +31,7 @@ body {
 }
 
 .register-main {
-	padding-left: 26px;
+	/* padding-left: 26px; */
 }
 
 .input-item {
@@ -46,7 +46,7 @@ body {
 }
 
 .input-item label {
-	width: 120px;
+	width: 140px;
 	display: inline-block;
 }
 
@@ -55,8 +55,8 @@ body {
 }
 
 .register-btn {
-	width: 120px;
-    height: 31px;
+	width: 150px;
+    height: 41px;
     background-color: #2778fe;
     color: #fff;
     border-style: none;
@@ -65,8 +65,8 @@ body {
 }
 
 .register-cancel-btn {
-	width: 120px;
-    height: 31px;
+	width: 150px;
+    height: 41px;
     background-color: #999;
     color: #fff;
     border-style: none;
@@ -82,4 +82,49 @@ body {
 
 .info-item .label {
 	width: 130px;
+}
+.wrapper {
+	display: flex;
+	justify-content: center;
+}
+.inner-wrapper {
+	width: 60%;
+}
+.btns-container {
+	padding-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+.success-main {
+	display: flex;
+	justify-content: center;
+	padding-top: 60px;
+}
+
+.success-main .icon-container {
+	width: 26%;
+}
+
+.success-main .icon-container img {
+	width: 100%;
+}
+.success-desc {
+	display: flex;
+	justify-content: center;
+	padding-top: 30px;
+}
+.success-desc .desc-container {
+	text-align: center;
+	font-size: 1.5rem;
+	
+}
+
+.success-desc .desc-container p {
+	margin: 0 !important;
+	line-height: 2.3rem;
+}
+
+.success-desc .link {
+	padding-top: 20px;
+	font-size: 1.2rem;
 }
