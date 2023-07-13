@@ -342,4 +342,25 @@
 		</small>
 	</footer>
 </body>
+<script>
+	const goodsItems = document.getElementsByClassName("goods-item-container");
+	const changeGoodsWidth = (W) => {
+		for(let i = 0; i < goodsItems.length; i++) {
+			goodsItems[i].style.width = W + "%";
+		}
+	}
+	changeGoodsWidth();
+	window.onresize = () => {
+		console.log(document.body.clientWidth);
+		if (document.body.clientWidth > 1400) {
+			changeGoodsWidth(18);
+		} else if (document.body.clientWidth > 1100) {
+			changeGoodsWidth(23);
+		} else if (document.body.clientWidth > 850) {
+			changeGoodsWidth(30);
+		} else if (document.body.clientWidth > 499) {
+			changeGoodsWidth(43);
+		}
+	}
+</script>
 </html>
