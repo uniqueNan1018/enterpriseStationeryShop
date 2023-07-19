@@ -2,7 +2,7 @@
 body {
 	color: #333;
 	margin: 0 !important;
-	min-width: 800px;
+	/* min-width: 800px; */
 }
 .lt{
 	text-align: left;
@@ -446,3 +446,128 @@ nav a {
 .swiper-slide img {
 	width: 100%;
 }
+/* * {
+    box-sizing: border-box;
+} */
+
+/* .wrapper {
+    min-height: 100vh;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px;
+    flex-direction: column;
+
+    background-color: aliceblue;
+}
+
+.block__pic {
+    width: 300px;
+}
+
+.block__title {
+    margin-bottom: 30px;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+} */
+.goods-detail-main .goods-text {
+	/* padding-top: 14px; */
+	padding-left: 14px;
+	/* padding-right: 20px; */
+}
+.goods-detail-main .goods-text .caption {
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+.goods-detail-main .goods-text .details-top {
+	border: 1px solid #ddd;
+	padding: 20px 14px;
+}
+.details-top div {
+	word-wrap:break-word;
+	word-break:break-all;
+}
+.goods-detail-main .goods-text .price {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px;
+}
+.goods-detail-main .goods-text .price .title {
+	font-size: 16px;
+}
+
+.goods-detail-main .goods-text .price .content {
+	text-align: right;
+}
+.goods-detail-main .goods-text .price .p {
+	color: #f5b400;
+	font-size: 24px;
+	font-weight: bold;
+}
+.goods-detail-main .goods-text .yen-mark {
+	font-size: 14px;
+	/* color: #999; */
+}
+.goods-detail-main .goods-text .buy {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	padding-top: 20px;
+}
+
+.goods-detail-main .goods-text .buy .label {
+	margin-right: 10px;
+}
+
+.goods-detail-main .goods-text .buy .cnt {
+	border: 1px solid #ccc;
+	height: 40px;
+	border-radius: 3px;
+	padding-left: 10px;
+	width: 100px;
+	margin-right: 10px;
+}
+
+.goods-detail-main .goods-text .buy .cart {
+	height: 44px;
+	border: none;
+	background-color: #f5b400;
+	color: #fff;
+	font-size: 16px;
+	padding: 0 20px;
+	cursor: pointer;
+	/* border-radius: 6px; */
+}
+
+.goods-detail-table {
+	padding-top: 30px;
+}
+.goods-detail-table table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.goods-detail-table th {
+	border: 1px solid #ddd;
+	text-align: left;
+	padding: 5px;
+	word-wrap:break-word;
+	word-break:break-all;
+}
+
+.goods-detail-table td {
+	border: 1px solid #ddd;
+	text-align: left;
+	padding: 5px;
+	word-wrap:break-word;
+	word-break:break-all;
+}
+
+

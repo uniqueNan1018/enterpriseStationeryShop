@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/default.css">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"> -->
     <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <script src="./js/zoomsl.min.js"></script>
+    
     <title>商品詳細</title>
 </head>
 <body>
@@ -33,10 +37,10 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <div class="swiper-slide"><img src="./img/インクシアン.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="./img/インクマゼンダ.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="./img/インク黒.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="./img/インクシアン.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/インクシアン.jpg" class="zoomsl-img-1"  data-large="./img/インクシアン.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/インクマゼンダ.jpg" class="zoomsl-img-2"  data-large="./img/インクマゼンダ.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/インク黒.jpg" alt="" class="zoomsl-img-3"  data-large="./img/インク黒.jpg"></div>
+                        <div class="swiper-slide"><img src="./img/インクシアン.jpg" alt="" class="zoomsl-img-4"  data-large="./img/インクシアン.jpg"></div>
                     </div>
                 </div>
                 <div class="swiper mySwiper">
@@ -52,15 +56,95 @@
 
             </div>
             <div class="goods-text">
-                <div>
-                    
+                <div class="caption">
+                    純正インクカートリッジ Canon BCI-381s+380s 小容量
                 </div>
-                純正インクカートリッジ Canon BCI-381s+380s 小容量
+                <div class="details-top">
+                    <div>品番：XXXXX</div>
+                    <div>カテゴリー：XXXXX</div>
+                    <div>メーカー：XXXXXX</div>
+                    <div>色：ピンク</div>
+                    <div>特徴：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
+                    <div>注意点：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
+                </div>
+                <div class="price">
+                    <div class="title">
+                        提供価格（税込）
+                    </div>
+                    <div class="content">
+                        <div class="p">147<span class="yen-mark">円</span></div>
+                        <div class="t">(税抜価格137円)</div>
+                    </div>
+                </div>
+                <div class="buy">
+                    <div class="label">注文数</div>
+                    <input class="cnt" type="number" value="1">
+                    <input class="cart" type="button" value="カートに入れる">
+                </div>
             </div>
         </section>
+        <section class="goods-detail-table">
+            <table>
+                <tr>
+                    <th>概要</th>
+                    <td>XXXXXXXXXXXXXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <th>商品説明</th>
+                    <td>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        <br>XXXXXXXXXXXXXXXXXXXX
+                        <br>XXXXXXXXXXXXXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <th>仕様</th>
+                    <td>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        <br>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        <br>XXXXXXXXXXXXXXXXXXXX
+                    </td>
+                </tr>
+            </table>
+        </section>
     </main>
+    <footer class="common-footer">
+        <small>
+            &copy; 2023 ガセール ～ガセ商店　法人通販サイト
+        </small>
+    </footer>
 </body>
 <script>
+    $(function () {
+            $(".zoomsl-img-1").imagezoomsl({
+                magnifiereffectanimate: "fadeIn",
+                magnifierborder: "1px solid #ddd",
+
+                //以下オプション
+                // classmagnifier: window.external ? "round-loope" : "", //CSSで拡大枠の形状を変更
+                // cursorshadeborder: "10px solid #000", //カーソル枠の太さ・形状・色
+                // descarea: ".my-container", //クラス指定した場所に拡大画像を表示
+                // innerzoom: true, //インナーズーム
+                // innerzoommagnifier: true, //インナーズームの別バージョン
+                // loopspeedanimate: 5, //カーソルの追従速度
+                // magnifierborder: "none",  //カーソル枠の有無
+                // magnifiereffectanimate: "fadeIn", //拡大画像のアニメーション。他にslideIn
+                // magnifierpos: "left", //拡大画像の位置。他にright
+                // magnifiersize: [530, 340], //拡大画像のサイズ。絶対値
+                // scrollspeedanimate: 10, //カーソル移動時の拡大画像の追従速度
+                // zoomrange: [1, 10],　//ズームのレンジ 1-10倍
+                // zoomstart: 4, //ズームの開始値
+            });
+            $(".zoomsl-img-2").imagezoomsl({
+                magnifiereffectanimate: "fadeIn",
+                magnifierborder: "1px solid #ddd",
+            });
+            $(".zoomsl-img-3").imagezoomsl({
+                magnifiereffectanimate: "fadeIn",
+                magnifierborder: "1px solid #ddd",
+            });
+            $(".zoomsl-img-4").imagezoomsl({
+                magnifiereffectanimate: "fadeIn",
+                magnifierborder: "1px solid #ddd",
+            });
+        });
 
     const swiper = new Swiper(".mySwiper", {
         spaceBetween: 10,
@@ -69,10 +153,10 @@
     });
 
     const swiper2 = new Swiper(".mySwiper2", {
-        autoplay: {
-            disableOnInteraction: false,
-            delay: 5000,
-        },
+        // autoplay: {
+        //     disableOnInteraction: false,
+        //     delay: 5000,
+        // },
         thumbs: {
             swiper: swiper
         },
