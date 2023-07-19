@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/default.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <script src="./js/swiper-bundle.min.js"></script>
+    <title>商品詳細</title>
+</head>
+<body>
+    <header class="common-header">
+        <p class="main-title">ガセール ～ガセ商店　法人通販サイト～</p>
+        <div class="sub-wrapper">
+            <div>(株)XXXX ○○部　日本　太郎　様、こんにちは！&nbsp;&nbsp;&nbsp;
+                <a href="#" class="log-off">ログオフ</a>
+            </div>
+            <div class="opt-wrapper">
+                <a href="#"><img class="cart-icon" src="./img/writecart_icon.png" />カート</a>&nbsp;&nbsp;&nbsp;
+                <a href="#">注文履歴</a>
+            </div>
+        </div>
+    </header>
+    <main class="shop-main-container">
+        <nav>
+            <span><a href="uw04_01.html">商品検索</a></span>
+            <span>></span>
+            <span>商品詳細</span>
+        </nav>
+        <section class="goods-detail-main">
+            <div class="goods-image-container">
+                <div class="swiper mySwiper2">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><img src="./img/インクシアン.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/インクマゼンダ.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/インク黒.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/インクシアン.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="swiper mySwiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><img src="./img/インクシアン.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/インクマゼンダ.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/インク黒.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/インクシアン.jpg" alt=""></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="goods-text">
+                <div>
+                    
+                </div>
+                純正インクカートリッジ Canon BCI-381s+380s 小容量
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+
+    const swiper = new Swiper(".mySwiper", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        // autoplay: true,
+    });
+
+    const swiper2 = new Swiper(".mySwiper2", {
+        autoplay: {
+            disableOnInteraction: false,
+            delay: 5000,
+        },
+        thumbs: {
+            swiper: swiper
+        },
+    });
+</script>
+</html>

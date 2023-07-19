@@ -365,3 +365,84 @@ body {
 .goods-section .result-title {
 	padding: 10px 0;
 }
+nav {
+	margin-bottom: 20px;
+}
+nav span {
+	margin-right: 1px;
+}
+nav a {
+	color: #4aa6ed;
+	text-decoration: none;
+	cursor: pointer;
+}
+.goods-detail-main {
+	display: flex;
+}
+
+.goods-detail-main .goods-image-container {
+	width: 410px;
+}
+.goods-detail-main .goods-text {
+	flex: 1;
+}
+.goods-detail-main .swiper-wrapper {
+  /* wrapperのサイズを調整 */
+  width: 100%;
+  height: 400px;
+  
+}
+
+.goods-detail-main .swiper-slide {
+  /* スライドのサイズを調整、中身のテキスト配置調整、背景色 */
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 400px;
+  /* border: 1px solid #ddd;
+  margin-bottom: 10px; */
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.goods-detail-main .mySwiper2 {
+  height: 400px;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.goods-detail-main .mySwiper {
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-wrapper {
+	height: 90px;
+	box-sizing: border-box;
+}
+
+.goods-detail-main .mySwiper .swiper-slide {
+	height: 90px;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding: 5px;
+}
+
+.goods-detail-main .mySwiper .swiper-slide {
+  width: 25%;
+  /* height: 100%; */
+  opacity: 0.4;
+  line-height: 80px;
+}
+
+.goods-detail-main .mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.swiper-slide img {
+	width: 100%;
+}
