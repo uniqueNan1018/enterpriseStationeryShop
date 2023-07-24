@@ -38,13 +38,19 @@ body {
 
 .input-item {
 	padding-bottom: 20px;
+	display: flex;
 }
 
 .input-item input {
-	padding: 4px 5px;
-    border: 1px solid #ddd;
+	padding: 6px 5px;
+    border: 1px solid #ccc;
     border-radius: 3px;
-    min-width: 300px;
+    min-width: 364px;
+}
+
+.input-item textarea {
+	border: 1px solid #ccc;
+	border-radius: 3px;
 }
 
 .input-item label {
@@ -97,6 +103,12 @@ body {
 	display: flex;
 	justify-content: center;
 }
+
+
+.btns-container-left {
+	justify-content: left;
+}
+
 .success-main {
 	display: flex;
 	justify-content: center;
