@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/default.css">
+    <script src="./js/vue.min.js"></script>
     <title>カート</title>
 </head>
 <body>
@@ -19,81 +20,33 @@
             </div>
         </div>
     </header>
-    <main class="shop-main-container">
+    <main class="shop-main-container" id="app">
         <nav>
             <span><a href="uw04_01.html">商品検索</a></span>
             <span>></span>
             <span>カート</span>
         </nav>
         <section class="cart-container">
-            <div class="cart-item">
+            <div class="cart-item" v-for="goods in goodsList">
                 <div class="img-wrapper">
-                    <img src="./img/インクシアン.jpg" alt="">
+                    <img :src="goods.image" alt="">
                 </div>
                 <div class="desc-wrapper">
                     <div class="caption">
-                        純正インクカートリッジ Canon BCI-381s+380s 小容量
+                        {{goods.name}}
                     </div>
                     <div class="sub">
                         品番：XXXX　色：XX　カテゴリー：XXXXX
                     </div>
                     <div class="price-count">
                         <div class="content">
-                            <span class="p"><span class="yen-mark">￥</span>147</span>
-                            <span class="t">(税込) 税抜価格137円</span>
+                            <span class="p"><span class="yen-mark">￥</span>{{(goods.basePrice * 1.08).toLocaleString()}}</span>
+                            <span class="t">(税込) 税抜価格{{goods.basePrice.toLocaleString()}}円</span>
                         </div>
                         <div class="buy">
                             <div class="label">注文数</div>
-                            <input class="cnt" type="number" value="1">
-                            <span class="del">この商品を削除する</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart-item">
-                <div class="img-wrapper">
-                    <img src="./img/クリアファイル.jpg" alt="">
-                </div>
-                <div class="desc-wrapper">
-                    <div class="caption">
-                        ポケット付きA4クリアファイル（会計・検査・配送伝票等用）25枚入り
-                    </div>
-                    <div class="sub">
-                        品番：XXXX　色：XX　カテゴリー：XXXXX
-                    </div>
-                    <div class="price-count">
-                        <div class="content">
-                            <span class="p"><span class="yen-mark">￥</span>1650</span>
-                            <span class="t">(税込) 税抜価格1500円</span>
-                        </div>
-                        <div class="buy">
-                            <div class="label">注文数</div>
-                            <input class="cnt" type="number" value="1">
-                            <span class="del">この商品を削除する</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart-item">
-                <div class="img-wrapper">
-                    <img src="./img/ホチキス.jpg" alt="">
-                </div>
-                <div class="desc-wrapper">
-                    <div class="caption">
-                        Deli ホッチキス 省力80% メーカー3年保証 50枚とじ 軽い力レバー採用 50枚綴じ トップ滑り止めTPR素材 (1500本のホチキス針、ホチキス針リムーバー)付属 (ブラック, 40-50枚綴じ)
-                    </div>
-                    <div class="sub">
-                        品番：XXXX　色：XX　カテゴリー：XXXXX
-                    </div>
-                    <div class="price-count">
-                        <div class="content">
-                            <span class="p"><span class="yen-mark">￥</span>2000</span>
-                            <span class="t">(税込) 税抜価格2200円</span>
-                        </div>
-                        <div class="buy">
-                            <div class="label">注文数</div>
-                            <input class="cnt" type="number" value="1">
-                            <span class="del">この商品を削除する</span>
+                            <input class="cnt" type="number" v-model="goods.count" @change="onCountChange">
+                            <span class="del" @click="onDel(goods.no)">この商品を削除する</span>
                         </div>
                     </div>
                 </div>
@@ -104,9 +57,9 @@
                 合計価格（税込）
             </div>
             <div class="price">
-                <div class="p">3000<span class="en-mark">円</span></div>
-                <div class="s"> (税抜価格3300円)</div>
-                <button>注文する</button>
+                <div class="p">{{(totalBasePrice * 1.08).toLocaleString()}}<span class="en-mark">円</span></div>
+                <div class="s"> (税抜価格{{totalBasePrice.toLocaleString()}}円)</div>
+                <button onclick="location.href='uw07_01.html'">注文する</button>
             </div>
         </section>
     </main>
@@ -116,4 +69,59 @@
         </small>
     </footer>
 </body>
+<script>
+    new Vue({
+            el: "#app",
+            data() {
+                return {
+                    goodsList: [{
+                        no: 1,
+                        name: "純正インクカートリッジ Canon BCI-381s+380s 小容量",
+                        image: "./img/インクシアン.jpg",
+                        basePrice: 2300,
+                        count: 1,
+                    }, {
+                        no: 2,
+                        name: "ポケット付きA4クリアファイル（会計・検査・配送伝票等用）25枚入り",
+                        image: "./img/クリアファイル.jpg",
+                        basePrice: 1500,
+                        count: 2,
+                    }, {
+                        no: 3,
+                        name: "Deli ホッチキス 省力80% メーカー3年保証 50枚とじ 軽い力レバー採用 50枚綴じ トップ滑り止めTPR素材 (1500本のホチキス針、ホチキス針リムーバー)付属 (ブラック, 40-50枚綴じ)",
+                        image: "./img/ホチキス.jpg",
+                        basePrice: 2000,
+                        count: 1,
+                    }],
+                    totalBasePrice: 0,
+                }
+            },
+            mounted() {
+                this.calcTotalPrice();
+            },
+            methods: {
+                calcTotalPrice() {
+                    let totalBasePrice = 0;
+                    this.goodsList.forEach(({ basePrice, count }) => {
+                        totalBasePrice += (basePrice * (+count));
+                    });
+                    this.totalBasePrice = totalBasePrice;
+                },
+                onCountChange() {
+                    this.calcTotalPrice();
+                },
+                onDel(id) {
+                    const goods = this.goodsList.find(({no}) => no == id);
+                    const {name} = goods;
+
+                    const rst = confirm(`「${name}」をカートから削除してよろしいですか`);
+                    if (rst) {
+                        const newGoodsList = this.goodsList.filter(({ no }) => no != id);
+                        this.goodsList = [...newGoodsList];
+                        alert(`「${name}」をカートから削除しました！`);
+                    }
+                }
+            }
+        })
+</script>
 </html>
