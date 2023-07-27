@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/default.css">
+    <script src="./js/vue.min.js"></script>
     <title>会員登録</title>
 </head>
 <body>
@@ -13,61 +14,61 @@
             <header>
                 <h1>ガセール　～ガセ商店　法人通販サイト～</h1>
             </header>
-            <main class="register-main">
+            <main class="register-main" id="app">
                 <h2>会員登録</h2>
                     <form>
                     <div class="input-item">
                         <label>会社名</label>
-                        <input type="text" placeholder="入力してください"/>
+                        <input type="text" placeholder="入力してください" v-model="infos.companyName"/>
                         <span class="error">(必須)</span>
                     </div>
                     <div class="input-item">
                         <label>部署名</label>
-                        <input type="text" placeholder="入力してください"/>
+                        <input type="text" placeholder="入力してください" v-model="infos.division"/>
                         <span class="error">(必須)</span>
                     </div>
                     <div class="input-item">
                         <label>担当者名</label>
-                        <input type="text" placeholder="入力してください"/>
+                        <input type="text" placeholder="入力してください" v-model="infos.recipient"/>
                         <span class="error">(必須)</span>
                     </div>
                     <div class="input-item">
                         <label>郵便番号</label>
-                        <input type="text" placeholder="入力してください"/>
+                        <input type="text" placeholder="入力してください" v-model="infos.postCode"/>
                         <span class="error">(必須)</span>
                     </div>
                     <div class="input-item" id="address">
                         <label>会社住所</label>
-                        <input type="text" placeholder="入力してください"/>
+                        <input type="text" placeholder="入力してください" v-model="infos.address"/>
                         <span class="error">(必須)</span>
                     </div>
                     <div class="input-item">
                         <label>メールアドレス</label>
-                        <input type="text" placeholder="入力してください"/>
+                        <input type="text" placeholder="入力してください" v-model="infos.email"/>
                         <span class="error">(必須)</span>
                     </div>
                     <div class="input-item">
                         <label>電話番号</label>
-                        <input type="text" placeholder="入力してください"/>
+                        <input type="text" placeholder="入力してください" v-model="infos.tel"/>
                         <span class="error">(必須)</span>
                     </div>
                     <div class="input-item">
                         <label>パスワード</label>
-                        <input type="text" placeholder="入力してください"/>
+                        <input type="text" placeholder="入力してください" v-model="infos.password"/>
                         <span class="error">(必須)</span>
                     </div>
                     <div class="input-item">
                         <label>パスワード確認</label>
-                        <input type="text" placeholder="入力してください"/>
+                        <input type="text" placeholder="入力してください" v-model="infos.password2"/>
                         <span class="error">(必須)</span>
                     </div>
                     <div class="input-item">
                         <label>FAX番号</label>
-                        <input type="text" placeholder="入力してください"/>
+                        <input type="text" placeholder="入力してください" v-model="infos.fax"/>
                         <span class="note">(任意)</span>
                     </div>
                     <div class="btns-container">
-                        <input type="submit" value="登録する" class="register-btn">
+                        <input type="button" value="登録する" class="register-btn" @click="onSubmit">
                     </div>
                 </form>
             </main>
@@ -75,4 +76,99 @@
     </div>
     
 </body>
+<script>
+    function getParam(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    new Vue({
+        el: "#app",
+        data() {
+            return {
+                infos: {
+                    companyName: "",
+                    division: "",
+                    recipient: "",
+                    postCode: "",
+                    address: "",
+                    email: "",
+                    tel: "",
+                    password: "",
+                    password2: "",
+                    fax: "",
+                }
+            }
+        },
+        mounted() {
+            const f = getParam("f");
+            if (f == "1") {
+                this.infos = {
+                    companyName: "日電株式会社",
+                    division: "総務部",
+                    recipient: "田中　慎吾",
+                    postCode: "1698522",
+                    address: "東京都新宿区百人町１－２５－４",
+                    email: "niden@jniden.com",
+                    tel: "03 0000 0000",
+                    password: "123456",
+                    password2: "123456",
+                    fax: "03 0000 0000"
+                };
+            }
+        },
+        methods: {
+            onSubmit() {
+                const valids = [{
+                    key: "companyName",
+                    name: "会社名",
+                }, {
+                    key: "division",
+                    name: "部署",
+                }, {
+                    key: "recipient",
+                    name: "担当者名",
+                }, {
+                    key: "postCode",
+                    name: "郵便番号",
+                }, {
+                    key: "address",
+                    name: "会社住所",
+                }, {
+                    key: "tel",
+                    name: "電話番号",
+                }, {
+                    key: "password",
+                    name: "パスワード",
+                }];
+                let flag = true;
+                const errorMsgAry = [];
+                valids.forEach(({ key, name }) => {
+                    if (this.infos[key].trim() == "") {
+                        flag = false;
+                        errorMsgAry.push(name);
+                    }
+                });
+                if (errorMsgAry.length) {
+                    let errorMsg = errorMsgAry.join("、");
+                    errorMsg += "を入力してください！";
+                    alert(errorMsg);
+                }
+                const { password , password2 } = this.infos;
+                if(password != password2) {
+                    flag = false;
+                    alert("パスワードとパスワードの確認は一致ではありません");
+                }
+                if (flag) {
+                    location.href = "uw01_03.html";
+                }
+            }
+        }
+    });
+</script>
 </html>

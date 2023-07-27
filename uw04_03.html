@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>商品検索結果</title>
     <link rel="stylesheet" type="text/css" href="./css/default.css">
+    <script src="./js/vue.min.js"></script>
 </head>
 
 <body>
@@ -15,12 +16,12 @@
                 <a href="#" class="log-off">ログオフ</a>
             </div>
             <div class="opt-wrapper">
-                <a href="#"><img class="cart-icon" src="./img/writecart_icon.png" />カート</a>&nbsp;&nbsp;&nbsp;
+                <a href="#" onclick="location.href='uw05_01.html'" ><img class="cart-icon" src="./img/writecart_icon.png"/>カート</a>&nbsp;&nbsp;&nbsp;
                 <a href="#">注文履歴</a>
             </div>
         </div>
     </header>
-    <main class="shop-main-container">
+    <main class="shop-main-container" id="app">
         <section class="search-section">
             <input type="text" value="インクシアン" placeholder="商品の名前を入力してください">
             <img class="search-icon" src="./img/search1_icon.png" alt="">
@@ -31,281 +32,31 @@
                 合計15件の商品が見つかりました
             </div>
             <div class="goods-inner-container">
-                <div class="goods-item-container">
-                    <div class="img-wrapper">
-                        <img src="./img/インクシアン.jpg" />
-                    </div>
-                    <div class="goods-item-infos">
-                        <div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
-                        <div class="price-cart">
-                            <div class="cart" title="カートに入れましょう"></div>
-                            <div class="price">
-                                <div>
-                                    <div>
-                                        <div class="p">
-                                            <span class="enn-mark">￥</span>
-                                            <span class="p">2,300</span>
-                                            <span class="enn-mark">税抜</span>
-                                        </div>
-                                        <div class="sub-p">
-                                            <small class="mark">税込価格：2500円</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="detail-wrpper">
-                                    <a href="uw04_05.html" class="detail">詳細</a>
-                                </div>
-                            </div>
+                <div class="goods-inner-container">
+                    <div class="goods-item-container" v-for="goods in goodsList">
+                        <div class="img-wrapper">
+                            <img :src="goods.image" />
                         </div>
-                    </div>
-                </div>
-                <div class="goods-item-container">
-                    <div class="img-wrapper">
-                        <img src="./img/インクマゼンダ.jpg" />
-                    </div>
-                    <div class="goods-item-infos">
-                        <div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
-                        <div class="price-cart">
-                            <div class="cart" title="カートに入れましょう"></div>
-                            <div class="price">
-                                <div>
+                        <div class="goods-item-infos">
+                            <div class="goodsname">{{goods.name}}</div>
+                            <div class="price-cart">
+                                <div class="cart" title="カートに入れましょう" onclick="location.href='uw05_01.html'"></div>
+                                <div class="price">
                                     <div>
-                                        <div class="p">
-                                            <span class="enn-mark">￥</span>
-                                            <span class="p">3,300</span>
-                                            <span class="enn-mark">税抜</span>
-                                        </div>
-                                        <div class="sub-p">
-                                            <small class="mark">税込価格：3600円</small>
+                                        <div>
+                                            <div class="p">
+                                                <span class="enn-mark">￥</span>
+                                                <span class="p">{{goods.basePrice.toLocaleString()}}</span>
+                                                <span class="enn-mark">税抜</span>
+                                            </div>
+                                            <div class="sub-p">
+                                                <small class="mark">税込価格：{{(goods.basePrice * 1.08).toLocaleString()}}円</small>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="detail-wrpper">
-                                    <a href="uw04_05.html" class="detail">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="goods-item-container">
-                    <div class="img-wrapper">
-                        <img src="./img/インクマゼンダ.jpg" />
-                    </div>
-                    <div class="goods-item-infos">
-                        <div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
-                        <div class="price-cart">
-                            <div class="cart" title="カートに入れましょう"></div>
-                            <div class="price">
-                                <div>
-                                    <div>
-                                        <div class="p">
-                                            <span class="enn-mark">￥</span>
-                                            <span class="p">3,300</span>
-                                            <span class="enn-mark">税抜</span>
-                                        </div>
-                                        <div class="sub-p">
-                                            <small class="mark">税込価格：3600円</small>
-                                        </div>
+                                    <div class="detail-wrpper">
+                                        <a href="uw04_05.html" class="detail">詳細</a>
                                     </div>
-                                </div>
-                                <div class="detail-wrpper">
-                                    <a href="uw04_05.html" class="detail">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="goods-item-container">
-                    <div class="img-wrapper">
-                        <img src="./img/インクマゼンダ.jpg" />
-                    </div>
-                    <div class="goods-item-infos">
-                        <div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
-                        <div class="price-cart">
-                            <div class="cart" title="カートに入れましょう"></div>
-                            <div class="price">
-                                <div>
-                                    <div>
-                                        <div class="p">
-                                            <span class="enn-mark">￥</span>
-                                            <span class="p">3,300</span>
-                                            <span class="enn-mark">税抜</span>
-                                        </div>
-                                        <div class="sub-p">
-                                            <small class="mark">税込価格：3600円</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="detail-wrpper">
-                                    <a href="uw04_05.html" class="detail">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="goods-item-container">
-                    <div class="img-wrapper">
-                        <img src="./img/インク黒.jpg" />
-                    </div>
-                    <div class="goods-item-infos">
-                        <div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
-                        <div class="price-cart">
-                            <div class="cart" title="カートに入れましょう"></div>
-                            <div class="price">
-                                <div>
-                                    <div>
-                                        <div class="p">
-                                            <span class="enn-mark">￥</span>
-                                            <span class="p">3,300</span>
-                                            <span class="enn-mark">税抜</span>
-                                        </div>
-                                        <div class="sub-p">
-                                            <small class="mark">税込価格：3600円</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="detail-wrpper">
-                                    <a href="uw04_05.html" class="detail">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="goods-item-container">
-                    <div class="img-wrapper">
-                        <img src="./img/インクマゼンダ.jpg" />
-                    </div>
-                    <div class="goods-item-infos">
-                        <div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
-                        <div class="price-cart">
-                            <div class="cart" title="カートに入れましょう"></div>
-                            <div class="price">
-                                <div>
-                                    <div>
-                                        <div class="p">
-                                            <span class="enn-mark">￥</span>
-                                            <span class="p">3,300</span>
-                                            <span class="enn-mark">税抜</span>
-                                        </div>
-                                        <div class="sub-p">
-                                            <small class="mark">税込価格：3600円</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="detail-wrpper">
-                                    <a href="uw04_05.html" class="detail">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="goods-item-container">
-                    <div class="img-wrapper">
-                        <img src="./img/インクマゼンダ.jpg" />
-                    </div>
-                    <div class="goods-item-infos">
-                        <div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
-                        <div class="price-cart">
-                            <div class="cart" title="カートに入れましょう"></div>
-                            <div class="price">
-                                <div>
-                                    <div>
-                                        <div class="p">
-                                            <span class="enn-mark">￥</span>
-                                            <span class="p">3,300</span>
-                                            <span class="enn-mark">税抜</span>
-                                        </div>
-                                        <div class="sub-p">
-                                            <small class="mark">税込価格：3600円</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="detail-wrpper">
-                                    <a href="uw04_05.html" class="detail">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="goods-item-container">
-                    <div class="img-wrapper">
-                        <img src="./img/インクマゼンダ.jpg" />
-                    </div>
-                    <div class="goods-item-infos">
-                        <div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
-                        <div class="price-cart">
-                            <div class="cart" title="カートに入れましょう"></div>
-                            <div class="price">
-                                <div>
-                                    <div>
-                                        <div class="p">
-                                            <span class="enn-mark">￥</span>
-                                            <span class="p">3,300</span>
-                                            <span class="enn-mark">税抜</span>
-                                        </div>
-                                        <div class="sub-p">
-                                            <small class="mark">税込価格：3600円</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="detail-wrpper">
-                                    <a href="uw04_05.html" class="detail">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="goods-item-container">
-                    <div class="img-wrapper">
-                        <img src="./img/インクマゼンダ.jpg" />
-                    </div>
-                    <div class="goods-item-infos">
-                        <div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
-                        <div class="price-cart">
-                            <div class="cart" title="カートに入れましょう"></div>
-                            <div class="price">
-                                <div>
-                                    <div>
-                                        <div class="p">
-                                            <span class="enn-mark">￥</span>
-                                            <span class="p">3,300</span>
-                                            <span class="enn-mark">税抜</span>
-                                        </div>
-                                        <div class="sub-p">
-                                            <small class="mark">税込価格：3600円</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="detail-wrpper">
-                                    <a href="uw04_05.html" class="detail">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="goods-item-container">
-                    <div class="img-wrapper">
-                        <img src="./img/インクマゼンダ.jpg" />
-                    </div>
-                    <div class="goods-item-infos">
-                        <div class="goodsname">インクシアン商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名</div>
-                        <div class="price-cart">
-                            <div class="cart" title="カートに入れましょう"></div>
-                            <div class="price">
-                                <div>
-                                    <div>
-                                        <div class="p">
-                                            <span class="enn-mark">￥</span>
-                                            <span class="p">3,300</span>
-                                            <span class="enn-mark">税抜</span>
-                                        </div>
-                                        <div class="sub-p">
-                                            <small class="mark">税込価格：3600円</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="detail-wrpper">
-                                    <a href="uw04_05.html" class="detail">詳細</a>
                                 </div>
                             </div>
                         </div>
@@ -329,31 +80,73 @@
 </body>
 <script>
     const goodsItems = document.getElementsByClassName("goods-item-container");
-        const changeGoodsWidth = (W) => {
-            for (let i = 0; i < goodsItems.length; i++) {
-                goodsItems[i].style.width = W + "%";
-            }
+    const changeGoodsWidth = (W) => {
+        for (let i = 0; i < goodsItems.length; i++) {
+            goodsItems[i].style.width = W + "%";
         }
-        changeGoodsWidth();
-        window.onresize = () => {
-            console.log(document.body.clientWidth);
-            if (document.body.clientWidth > 1400) {
-                changeGoodsWidth(18);
-            } else if (document.body.clientWidth > 1100) {
-                changeGoodsWidth(23);
-            } else if (document.body.clientWidth > 850) {
-                changeGoodsWidth(30);
-            } else if (document.body.clientWidth > 499) {
-                changeGoodsWidth(43);
-            }
+    }
+    changeGoodsWidth();
+    window.onresize = () => {
+        console.log(document.body.clientWidth);
+        if (document.body.clientWidth > 1400) {
+            changeGoodsWidth(18);
+        } else if (document.body.clientWidth > 1100) {
+            changeGoodsWidth(23);
+        } else if (document.body.clientWidth > 850) {
+            changeGoodsWidth(30);
+        } else if (document.body.clientWidth > 499) {
+            changeGoodsWidth(43);
         }
+    }
 
-        // const user = {
-        //     name: "田中",
-        //     address: {
-        //         address: "東京都足立区",
-        //         postCode: "1770053"
-        //     }
-        // };
+    new Vue({
+        el: "#app",
+        data() {
+            return {
+                goodsList: [{
+                    name: "インクシアン商品名商品名商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名",
+                    image: "./img/インクシアン.jpg",
+                    basePrice: 2300,
+                }, {
+                    name: "インクシアン商品名商品名商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名",
+                    image: "./img/インクマゼンダ.jpg",
+                    basePrice: 2300,
+                }, {
+                    name: "インクシアン商品名商品名商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名",
+                    image: "./img/インク黒.jpg",
+                    basePrice: 2300,
+                }, {
+                    name: "インクシアン商品名商品名商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名",
+                    image: "./img/インクシアン.jpg",
+                    basePrice: 2300,
+                }, {
+                    name: "インクシアン商品名商品名商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名",
+                    image: "./img/インクシアン.jpg",
+                    basePrice: 2300,
+                }, {
+                    name: "インクシアン商品名商品名商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名",
+                    image: "./img/インクシアン.jpg",
+                    basePrice: 2300,
+                }, {
+                    name: "インクシアン商品名商品名商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名",
+                    image: "./img/インクシアン.jpg",
+                    basePrice: 2300,
+                }, {
+                    name: "インクシアン商品名商品名商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名",
+                    image: "./img/インクシアン.jpg",
+                    basePrice: 2300,
+                }, {
+                    name: "インクシアン商品名商品名商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名",
+                    image: "./img/インクシアン.jpg",
+                    basePrice: 2300,
+                }, {
+                    name: "インクシアン商品名商品名商品名商品名商品名商品名商品名インクシアン商品名商品名商品名商品名商品名",
+                    image: "./img/インクシアン.jpg",
+                    basePrice: 2300,
+                }]
+            }
+        }
+        
+    });
 </script>
 </html>

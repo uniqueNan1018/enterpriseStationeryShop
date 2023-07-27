@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,10 @@
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/jquery-3.7.0.min.js"></script>
     <script src="./js/zoomsl.min.js"></script>
-    
+
     <title>商品詳細</title>
 </head>
+
 <body>
     <header class="common-header">
         <p class="main-title">ガセール ～ガセ商店　法人通販サイト～</p>
@@ -20,7 +22,7 @@
                 <a href="#" class="log-off">ログオフ</a>
             </div>
             <div class="opt-wrapper">
-                <a href="#" onclick="location.href='uw05_01.html'" ><img class="cart-icon" src="./img/writecart_icon.png" />カート</a>&nbsp;&nbsp;&nbsp;
+                <a href="#"><img class="cart-icon" src="./img/writecart_icon.png" onclick="location.href='uw05_01.html'"/>カート</a>&nbsp;&nbsp;&nbsp;
                 <a href="#">注文履歴</a>
             </div>
         </div>
@@ -37,10 +39,14 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <div class="swiper-slide"><img src="./img/インクシアン.jpg" class="zoomsl-img-1"  data-large="./img/インクシアン.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="./img/インクマゼンダ.jpg" class="zoomsl-img-2"  data-large="./img/インクマゼンダ.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="./img/インク黒.jpg" alt="" class="zoomsl-img-3"  data-large="./img/インク黒.jpg"></div>
-                        <div class="swiper-slide"><img src="./img/インクシアン.jpg" alt="" class="zoomsl-img-4"  data-large="./img/インクシアン.jpg"></div>
+                        <div class="swiper-slide"><img src="./img/インクシアン.jpg" class="zoomsl-img-1"
+                                data-large="./img/インクシアン.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/インクマゼンダ.jpg" class="zoomsl-img-2"
+                                data-large="./img/インクマゼンダ.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/インク黒.jpg" alt="" class="zoomsl-img-3"
+                                data-large="./img/インク黒.jpg"></div>
+                        <div class="swiper-slide"><img src="./img/インクシアン.jpg" alt="" class="zoomsl-img-4"
+                                data-large="./img/インクシアン.jpg"></div>
                     </div>
                 </div>
                 <div class="swiper mySwiper">
@@ -65,7 +71,9 @@
                     <div>メーカー：XXXXXX</div>
                     <div>色：ピンク</div>
                     <div>特徴：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
-                    <div>注意点：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
+                    <div>
+                        注意点：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    </div>
                 </div>
                 <div class="price">
                     <div class="title">
@@ -78,7 +86,7 @@
                 </div>
                 <div class="buy">
                     <div class="label">注文数</div>
-                    <input class="cnt" type="number" value="1">
+                    <input class="cnt" type="number" value="100" id="countInput">
                     <input class="cart" type="button" value="カートに入れる" onclick="location.href='uw05_01.html'">
                 </div>
             </div>
@@ -93,7 +101,8 @@
                     <th>商品説明</th>
                     <td>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <br>XXXXXXXXXXXXXXXXXXXX
-                        <br>XXXXXXXXXXXXXXXXXXXX</td>
+                        <br>XXXXXXXXXXXXXXXXXXXX
+                    </td>
                 </tr>
                 <tr>
                     <th>仕様</th>
@@ -112,39 +121,44 @@
     </footer>
 </body>
 <script>
+    setTimeout(() => {
+        alert("大変申し訳ありません、本商品の在庫数は50のみです。");
+        const countInput = $("#countInput");
+        countInput.attr("value", 50);
+    }, 1000);
     $(function () {
-            $(".zoomsl-img-1").imagezoomsl({
-                magnifiereffectanimate: "fadeIn",
-                magnifierborder: "1px solid #ddd",
+        $(".zoomsl-img-1").imagezoomsl({
+            magnifiereffectanimate: "fadeIn",
+            magnifierborder: "1px solid #ddd",
 
-                //以下オプション
-                // classmagnifier: window.external ? "round-loope" : "", //CSSで拡大枠の形状を変更
-                // cursorshadeborder: "10px solid #000", //カーソル枠の太さ・形状・色
-                // descarea: ".my-container", //クラス指定した場所に拡大画像を表示
-                // innerzoom: true, //インナーズーム
-                // innerzoommagnifier: true, //インナーズームの別バージョン
-                // loopspeedanimate: 5, //カーソルの追従速度
-                // magnifierborder: "none",  //カーソル枠の有無
-                // magnifiereffectanimate: "fadeIn", //拡大画像のアニメーション。他にslideIn
-                // magnifierpos: "left", //拡大画像の位置。他にright
-                // magnifiersize: [530, 340], //拡大画像のサイズ。絶対値
-                // scrollspeedanimate: 10, //カーソル移動時の拡大画像の追従速度
-                // zoomrange: [1, 10],　//ズームのレンジ 1-10倍
-                // zoomstart: 4, //ズームの開始値
-            });
-            $(".zoomsl-img-2").imagezoomsl({
-                magnifiereffectanimate: "fadeIn",
-                magnifierborder: "1px solid #ddd",
-            });
-            $(".zoomsl-img-3").imagezoomsl({
-                magnifiereffectanimate: "fadeIn",
-                magnifierborder: "1px solid #ddd",
-            });
-            $(".zoomsl-img-4").imagezoomsl({
-                magnifiereffectanimate: "fadeIn",
-                magnifierborder: "1px solid #ddd",
-            });
+            //以下オプション
+            // classmagnifier: window.external ? "round-loope" : "", //CSSで拡大枠の形状を変更
+            // cursorshadeborder: "10px solid #000", //カーソル枠の太さ・形状・色
+            // descarea: ".my-container", //クラス指定した場所に拡大画像を表示
+            // innerzoom: true, //インナーズーム
+            // innerzoommagnifier: true, //インナーズームの別バージョン
+            // loopspeedanimate: 5, //カーソルの追従速度
+            // magnifierborder: "none",  //カーソル枠の有無
+            // magnifiereffectanimate: "fadeIn", //拡大画像のアニメーション。他にslideIn
+            // magnifierpos: "left", //拡大画像の位置。他にright
+            // magnifiersize: [530, 340], //拡大画像のサイズ。絶対値
+            // scrollspeedanimate: 10, //カーソル移動時の拡大画像の追従速度
+            // zoomrange: [1, 10],　//ズームのレンジ 1-10倍
+            // zoomstart: 4, //ズームの開始値
         });
+        $(".zoomsl-img-2").imagezoomsl({
+            magnifiereffectanimate: "fadeIn",
+            magnifierborder: "1px solid #ddd",
+        });
+        $(".zoomsl-img-3").imagezoomsl({
+            magnifiereffectanimate: "fadeIn",
+            magnifierborder: "1px solid #ddd",
+        });
+        $(".zoomsl-img-4").imagezoomsl({
+            magnifiereffectanimate: "fadeIn",
+            magnifierborder: "1px solid #ddd",
+        });
+    });
 
     const swiper = new Swiper(".mySwiper", {
         spaceBetween: 10,
@@ -162,4 +176,5 @@
         },
     });
 </script>
+
 </html>

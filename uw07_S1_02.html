@@ -15,7 +15,7 @@
                 <a href="#" class="log-off">ログオフ</a>
             </div>
             <div class="opt-wrapper">
-                <a href="#"><img class="cart-icon" src="./img/writecart_icon.png" />カート</a>&nbsp;&nbsp;&nbsp;
+                <a href="#" onclick="location.href='uw05_01.html'"><img class="cart-icon" src="./img/writecart_icon.png" />カート</a>&nbsp;&nbsp;&nbsp;
                 <a href="#">注文履歴</a>
             </div>
         </div>
@@ -105,12 +105,18 @@
                     name: "電話番号",
                 }];
                 let flag = true;
+                const errorMsgAry = [];
                 valids.forEach(({ key , name}) => {
                     if (this.infos[key].trim() == "") {
                         flag = false;
-                        alert(name + "を入力してください！");
+                        errorMsgAry.push(name);
                     }
                 });
+                if (errorMsgAry.length) {
+                    let errorMsg = errorMsgAry.join("、");
+                    errorMsg += "を入力してください！";
+                    alert(errorMsg);
+                }
                 if (flag) {
                     alert("届け先を変更しました");
                     location.href = "uw07_01.html";
