@@ -34,11 +34,11 @@
             <div class="goods-inner-container">
                 <div class="goods-inner-container">
                     <div class="goods-item-container" v-for="goods in goodsList">
-                        <div class="img-wrapper">
+                        <div class="img-wrapper" onclick="location.href='uw04_05.html'">
                             <img :src="goods.image" />
                         </div>
                         <div class="goods-item-infos">
-                            <div class="goodsname">{{goods.name}}</div>
+                            <div class="goodsname" onclick="location.href='uw04_05.html'">{{goods.name}}</div>
                             <div class="price-cart">
                                 <div class="cart" title="カートに入れましょう" onclick="location.href='uw05_01.html'"></div>
                                 <div class="price">
